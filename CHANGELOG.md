@@ -1,3 +1,9 @@
+## Release 1.1.5
+
+* 280c555 bugfix: add GitHub Actions
+* f538b3c bugfix: update gems
+* 3de1cc3 bugfix: update package name on FreeBSD
+
 ## Release 1.1.4
 
 * 04d3064 bugfix: QA
