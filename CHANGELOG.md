@@ -1,3 +1,11 @@
+## Release 1.2.0
+
+* d5db559 bugfix: add ansible.cfg
+* 577d0e2 bugfix: QA
+* 147c925 bugfix: remove ansible_vault_password_file
+* cc1e404 ci: add kitchen workflow to CI
+* 827a6c7 feat: support Fedora
+
 ## Release 1.1.5
 
 * 280c555 bugfix: add GitHub Actions
