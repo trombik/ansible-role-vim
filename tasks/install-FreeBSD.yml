@@ -5,8 +5,7 @@
     name: "{{ vim_package }}"
     state: present
 
-- name: Install vim_additional_package
+- name: Install vim_additional_packages
   pkgng:
-    name: "{{ item }}"
+    name: "{{ vim_additional_packages }}"
     state: present
-  with_items: "{{ vim_additional_packages }}"
