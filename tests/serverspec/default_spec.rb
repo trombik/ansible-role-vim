@@ -5,7 +5,7 @@ package = "vim"
 additional_packages = []
 
 case os[:family]
-when "redhat"
+when "redhat", "fedora"
   package = "vim-minimal"
   additional_packages = ["protobuf-vim"]
 when "ubuntu"
