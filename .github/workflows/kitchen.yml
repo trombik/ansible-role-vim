@@ -70,6 +70,8 @@ jobs:
           # when you change options not related to vagrant boxes, cache
           # becomes invalid.
           key: vagrant-boxes-${{ hashFiles('**/.kitchen.yml') }}-${{ matrix.instance }}
+          restore-keys: |
+            vagrant-boxes-${{ hashFiles('**/.kitchen.yml') }}-${{ matrix.instance }}
 
       - name: Show vagrant version
         run: |
