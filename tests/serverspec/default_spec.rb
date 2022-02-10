@@ -1,22 +1,26 @@
 require "spec_helper"
 require "serverspec"
 
-package = "vim"
-additional_packages = []
-
-case os[:family]
-when "redhat", "fedora"
-  package = "vim-minimal"
-  additional_packages = ["protobuf-vim"]
-when "ubuntu"
-  package = "vim-nox"
-  additional_packages = ["vim-scripts"]
-when "openbsd"
-  additional_packages = ["vim-spell-uk"]
-when "freebsd"
-  package = "vim"
-  additional_packages = ["shells/tcshrc"]
-end
+package = case os[:family]
+          when "redhat", "fedora"
+            "vim-minimal"
+          when "ubuntu"
+            "vim-nox"
+          when "openbsd"
+            "vim"
+          when "freebsd"
+            "vim"
+          end
+additional_packages = case os[:family]
+                      when "redhat", "fedora"
+                        ["protobuf-vim"]
+                      when "ubuntu"
+                        ["vim-scripts"]
+                      when "openbsd"
+                        ["vim-spell-uk"]
+                      when "freebsd"
+                        ["shells/tcshrc"]
+                      end
 
 describe package(package) do
   it { should be_installed }
